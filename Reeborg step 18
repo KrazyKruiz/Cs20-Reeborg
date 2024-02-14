@@ -1,0 +1,78 @@
+from library import halfturn, move2, turn_right
+def left_is_clear():
+    halfturn()
+    if right_is_clear():
+        halfturn()
+        return True
+    else: 
+        halfturn()
+        return False
+    
+#start
+repeat 3:
+   if not is_facing_north():
+       turn_left()
+        
+        
+turn_left()
+turn_left()
+
+while not wall_in_front():
+    move()
+turn_right()
+
+
+while not wall_in_front():
+    move()
+turn_right()
+
+
+while object_here():
+    take()
+
+
+
+while not object_here():
+    while wall_in_front():
+        if is_facing_north():
+            if right_is_clear():
+                turn_right()
+                move()
+                turn_right()
+            else:
+                halfturn()
+                while not wall_in_front():
+                    move()
+                halfturn()
+                while not wall_in_front():
+                    move()
+                while carries_object():
+                    put()
+                while not carries_object():
+                    halfturn()
+                    while not wall_in_front():
+                        move()
+                    turn_right()
+                    while not wall_in_front():
+                        move()
+                    while wall_in_front():
+                        done()
+        else:
+            if left_is_clear():
+               turn_left()
+               move()
+               turn_left()
+            else:
+                halfturn()
+                while not wall_in_front():
+                    move()
+                put()
+    while not wall_in_front():            
+        while object_here():
+            take()   
+        move()
+    while object_here():
+        take()            
+   
+        
+#end :)
