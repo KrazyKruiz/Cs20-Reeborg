@@ -31,7 +31,7 @@ while object_here():
     take()
 
 
-
+#identify corner then do appropiate action
 while not object_here():
     while wall_in_front():
         if is_facing_north():
