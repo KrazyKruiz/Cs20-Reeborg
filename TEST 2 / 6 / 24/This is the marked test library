@@ -1,0 +1,83 @@
+#3 lefts make a right
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+    
+#double move and take for ease    
+def move2andtake():
+    move()
+    take()
+    move()
+    take()
+    
+#double move for ease
+def move2():
+    move()
+    move()
+    
+#180 degree turn
+def halfturn():
+    turn_right()
+    turn_right()
+    
+#put 2 times
+def put2():
+    put()
+    put()
+    
+#is left clear?
+def left_is_clear():
+    halfturn()
+    if right_is_clear():
+        halfturn()
+        return True
+    else: 
+        halfturn()
+        return False
+    
+    
+#to much/ spare parts
+def jump_hurdle_unused():
+    while not at_goal():
+        while wall_on_right():
+            if not wall_in_front():
+                move()
+                if at_goal():
+                    done()
+            if wall_in_front():
+                turn_left()
+        turn_right()
+        move()
+        if at_goal():
+            done()
+        turn_right()
+        move()
+        
+        
+        
+#the real one that jumps hurdles when presented        
+def jump_hurdle():
+    turn_left()
+    #jump up
+    while wall_on_right():
+        move()
+        
+        
+        #move over the hurdle and prepare to land
+    turn_right()
+    move()
+    #in case goal is immediatley after a 1 tall hurdle
+    if at_goal():
+        done()
+    turn_right()
+    move()
+    
+    
+    #descend to the ground then prepare to recommence running to nex hurdle/goal
+    while wall_on_right():
+        if not wall_in_front():
+            move()
+        else:
+            turn_left()
+            break
