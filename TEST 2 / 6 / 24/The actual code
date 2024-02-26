@@ -1,0 +1,11 @@
+from library import turn_right, jump_hurdle
+#start
+#so it ends at the goal
+while not at_goal():
+    #the hurdle is in the way, jump it
+    if wall_in_front():
+        jump_hurdle()
+    else:
+        #keep runnging to next hurdle
+        move()
+#end :)
