@@ -1,0 +1,29 @@
+#basic function approach
+#def go_straight():
+ #   while not wall_in_front():
+  #      move()
+   # if at_goal():
+    #    done()
+    
+#go_straight()
+
+#data input approach
+#completes task based on input of variable data
+#def go_forward(distance,speed):
+ #   think(speed)
+  #  for x in range(distance):
+   #     move()
+        
+#go_forward(50,6)
+
+#return approach
+#does a task and returns data out of the function
+#def stepnum():
+ #   return 6
+
+#def forw(distance):
+ #   for x in range(distance):
+  #      move()
+        
+#steps = stepnum()
+#forw(steps)
